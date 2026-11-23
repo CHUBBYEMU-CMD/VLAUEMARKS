@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-gold: #b5883e;
+    --brand-gold-dark: #916828;
+    --brand-gold-light: #d8aa58;
+    --brand-navy: #161324;
+    --brand-navy-light: #231e38;
+    --brand-canvas: #f8f9fa;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom geometric accent line style inspired by the portfolio vertical band */
+.geometric-accent-band {
+  background: linear-gradient(180deg, #b5883e 0%, #8c6424 100%);
+}
+
+/* Smooth continuous marquee carousel animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-scroll {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-scroll:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-scroll {
+    animation: none;
+  }
+}
+
